@@ -26,6 +26,9 @@ To process the images, I have used **InceptionV3** model (to extract the image f
 
 **Model Architecture**
 To train the model, pass the image feature vector (extracted using CNN model) and sequence of partial caption to Recurrent Neural Network (RNN-LSTM), the model will find the next possible word from the word matrix with the highest probability to create the next sequence of partial caption. Partial caption for the first time will be the "<start>" sequence. This can better be understand using following diagram:<br>
+<img src="https://github.com/raivarsha14/ImageCap/blob/master/images/Screen%20Shot%202020-07-02%20at%207.11.27%20PM.png"
+     alt="Model Architecture"
+     style="float: left; margin-right: 10px;" />
 
 For more clear understanding we can say that in the following diagram, if we pass the image feature vector along with the partial caption as "<start> a woman is", it will pass through the RNN model. Both the input will pass through feed forward neural network & model will search for the next possible word for the caption with the highest probability in word corpus and will generate the next sequence of partial caption.<br>
 
