@@ -50,7 +50,7 @@ The model does this process until it either meet the maximum length for a captio
 
 The model structure will be like this:<br>
 
-<img src="https://github.com/raivarsha14/ImageCap/blob/master/images/Screen%20Shot%202020-07-02%20at%207.11.27%20PM.png"
+<img src="https://github.com/raivarsha14/ImageCap/blob/master/images/download.png"
      alt="Model Architecture"
      style="float: left; margin-right: 10px;" />
 
@@ -72,13 +72,13 @@ But if the predicted cap is “A little dog is running on green grass”, the BL
 Following are few results of my model predicting captions for images
 
 <img src="https://github.com/raivarsha14/ImageCap/blob/master/images/Screen%20Shot%202020-07-02%20at%207.12.14%20PM.png"
-     alt="Model Architecture"
+     alt="Good Results"
      style="float: left; margin-right: 10px;" />
 
 Following are few results of my model predicting captions where it get confused with the object and colours
 
 <img src="https://github.com/raivarsha14/ImageCap/blob/master/images/Screen%20Shot%202020-07-02%20at%207.12.42%20PM.png"
-     alt="Model Architecture"
+     alt="Confused Results"
      style="float: left; margin-right: 10px;" />
 
 Above we can see, model wrongly predicted red scooter, whereas the actual colour of scooter is yellow. A "bus" is wrongly predicted as "double decker bus"
