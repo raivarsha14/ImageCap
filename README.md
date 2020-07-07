@@ -34,19 +34,19 @@ To process the images, I have used **InceptionV3** model (to extract the image f
 
 To train the model, pass the image feature vector (extracted using CNN model) and sequence of partial caption to Recurrent Neural Network (RNN-LSTM), the model will find the next possible word from the word matrix with the highest probability to create the next sequence of partial caption. Partial caption for the first time will be the "<start>" sequence. This can better be understood using following diagram:<br>
 
-![Model Architecture](/images/Screen%20Shot%202020-07-02%20at%207.11.27%20PM.png)
+![Model Architecture](/images/model_working.png)
 
 For more clear understanding, we can say that in the following diagram, if we pass the image feature vector along with the partial caption as "<start> a woman is", the partial caption will pass through the RNN model. The image feature vector and output of RNN (from the previous step) will pass through feed forward neural network & model will search for the next possible word for the caption with the highest probability in word corpus and will generate the next sequence of partial caption.<br>
 
-![Model Architecture Work Flow](/images/Screen%20Shot%202020-07-02%20at%207.11.38%20PM.png)
+![Model Architecture Work Flow](/images/model_inference_I.png)
 
 The model does this process until it either reaches the maximum caption length (as defined in the data preparation step) or finds the "<end>" sequence of the caption.<br>
 
-![Model Architecture Work Flow](/images/Screen%20Shot%202020-07-02%20at%207.11.47%20PM.png)
+![Model Architecture Work Flow](/images/model_inference_II.png)
 
 The model structure will be like this:<br>
 
-![Model Structure](/images/download.png)
+![Model Structure](/images/model_architecture.png)
 
 The model structure shows that the maximum length of cation can be 52 words, 384 neurones are being used, 300 is the length of word vector and 2048 is the length of image vector. The model will generate the probability for 7068 unique words in corpus.<br>
 
@@ -65,11 +65,11 @@ But if the predicted cap is “A little dog is running on green grass”, the BL
 ## Outcome <br>
 Following are few results of my model predicting captions for images
 
-![Good Results](/images/Screen%20Shot%202020-07-02%20at%207.12.14%20PM.png)
+![Good Results](/images/results_confused.png)
 
 Following are few results of my model predicting captions where it get confused with the object and colours
 
-![Confused Results](/images/Screen%20Shot%202020-07-02%20at%207.12.42%20PM.png)
+![Confused Results](/images/results_confused.png)
 
 Above we can see, model wrongly predicted red scooter, whereas the actual colour of scooter is yellow. A "bus" is wrongly predicted as "double decker bus"
 
