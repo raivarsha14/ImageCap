@@ -32,15 +32,15 @@ To process the images, I have used **InceptionV3** model (to extract the image f
 
 ## Model Architecture <br>
 
-To train the model, pass the image feature vector (extracted using CNN model) and sequence of partial caption to Recurrent Neural Network (RNN-LSTM), the model will find the next possible word from the word matrix with the highest probability to create the next sequence of partial caption. Partial caption for the first time will be the "<start>" sequence. This can better be understood using following diagram:<br>
+To train the model, pass the image feature vector (extracted using CNN model) and sequence of partial caption to Recurrent Neural Network (RNN-LSTM), the model will find the next possible word from the word matrix with the highest probability to create the next sequence of partial caption. Partial caption for the first time will be the "start" sequence. This can better be understood using following diagram:<br>
 
-![Model Architecture](/images/model_working.png)
+<img width="1003" alt="model_working" src="https://user-images.githubusercontent.com/61922456/88099248-ea876300-cb68-11ea-817d-f8dc3d2527b9.png">
 
-For more clear understanding, we can say that in the following diagram, if we pass the image feature vector along with the partial caption as "<start> a woman is", the partial caption will pass through the RNN model. The image feature vector and output of RNN (from the previous step) will pass through feed forward neural network & model will search for the next possible word for the caption with the highest probability in word corpus and will generate the next sequence of partial caption.<br>
+For more clear understanding, we can say that in the following diagram, if we pass the image feature vector along with the partial caption as "start a woman is", the partial caption will pass through the RNN model. The image feature vector and output of RNN (from the previous step) will pass through feed forward neural network & model will search for the next possible word for the caption with the highest probability in word corpus and will generate the next sequence of partial caption.<br>
 
 ![Model Architecture Work Flow](/images/model_inference_I.png)
 
-The model does this process until it either reaches the maximum caption length (as defined in the data preparation step) or finds the "<end>" sequence of the caption.<br>
+The model does this process until it either reaches the maximum caption length (as defined in the data preparation step) or finds the "end" sequence of the caption.<br>
 
 ![Model Architecture Work Flow](/images/model_inference_II.png)
 
